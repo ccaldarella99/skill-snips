@@ -11,8 +11,15 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        log.info("root method called");
-        model.addAttribute("message", "Skill Snippets");
+        log.info("root/index method called");
+        model.addAttribute("title", "Skill Snippets");
         return "index";
+    }
+
+    @GetMapping("/skills")
+    public String skills(Model model) {
+        log.info("skills method called");
+        model.addAttribute("title", "Skills");
+        return "skills";
     }
 }
